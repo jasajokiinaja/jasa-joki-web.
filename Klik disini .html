@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tamplet Instagram - GifHub</title>
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+
+    /* Container set to Instagram square ratio (1:1). Use 1080px ideal but scale to viewport */
+    .frame{width: min(720px, 92vw); aspect-ratio:1/1; margin:24px auto; border-radius:28px; overflow:hidden; box-shadow:0 20px 40px rgba(10,10,10,0.18); position:relative; font-family:Inter, system-ui, -apple-system, Roboto, 'Segoe UI', 'Helvetica Neue', Arial}
+
+    /* Background gradient + subtle animated blobs */
+    .bg{position:absolute;inset:0;background:linear-gradient(135deg,#fef3c7 0%, #ffe4e6 45%, #e0f2fe 100%);}
+    .blob{position:absolute;border-radius:50%;filter:blur(36px);opacity:0.36;mix-blend-mode:screen;animation:float 8s ease-in-out infinite}
+    .blob.b1{width:420px;height:420px;left:-80px;top:-60px;background:linear-gradient(90deg,#f43f5e,#fb7185);animation-duration:10s}
+    .blob.b2{width:360px;height:360px;right:-100px;bottom:-80px;background:linear-gradient(90deg,#06b6d4,#60a5fa);animation-duration:12s}
+    @keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-18px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
+
+    /* Card inner */
+    .card{position:relative;z-index:2;padding:36px;display:flex;flex-direction:column;gap:18px;height:100%;color:#061013}
+
+    /* Header - attention */
+    .headline{background:linear-gradient(90deg,rgba(0,0,0,0.05), rgba(255,255,255,0.05));padding:14px;border-radius:12px;font-weight:700;font-size:20px;display:flex;align-items:center;gap:12px}
+    .badge{background:#061013;color:#fff;padding:6px 10px;border-radius:10px;font-weight:700;font-size:12px}
+
+    /* Main text */
+    .main{background:rgba(255,255,255,0.6);backdrop-filter:blur(4px);padding:18px;border-radius:12px;flex:1;overflow:auto}
+    .main p{font-size:15px;line-height:1.45;margin-bottom:10px}
+
+    /* List */
+    .list{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+    .item{display:flex;align-items:center;gap:10px;font-weight:600}
+    .check{width:28px;height:28px;border-radius:8px;display:inline-grid;place-items:center;background:linear-gradient(180deg,#10b981,#059669);color:#fff;font-size:14px}
+
+    /* CTA area */
+    .cta{display:flex;flex-direction:column;gap:10px;align-items:center}
+    .cta p{font-weight:700}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,#0ea5e9,#7c3aed);color:#fff;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(124,58,237,0.26);transform:translateY(0);transition:transform .18s ease, box-shadow .18s ease}
+    .btn:active{transform:translateY(2px)}
+    .phone{font-size:13px;opacity:0.95}
+
+    /* Decorative GIF-like pulse ring */
+    .pulse{position:absolute;right:26px;bottom:26px;width:88px;height:88px;border-radius:50%;display:grid;place-items:center}
+    .ring{width:64px;height:64px;border-radius:50%;border:3px dashed rgba(255,255,255,0.7);animation:spin 2.6s linear infinite}
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+    /* Footer small attribution */
+    .foot{font-size:11px;color:rgba(6,16,19,0.66);text-align:center}
+
+    /* Responsive typography for smaller frames */
+    @media (max-width:420px){.frame{width:96vw}.headline{font-size:16px}.main p{font-size:14px}.btn{padding:10px 14px}}
+  </style>
+</head>
+<body>
+  <div class="frame" role="img" aria-label="Tamplet Instagram TugasinAja.Ok - Skripsi dan tugas akademis">
+    <div class="bg"></div>
+    <div class="blob b1" aria-hidden="true"></div>
+    <div class="blob b2" aria-hidden="true"></div>
+
+    <div class="card">
+      <div class="headline">
+        <div class="badge">Paling Penting!</div>
+        <div>Skripsi bikin overthinking? Santai, serahin ke kami. Kamu cukup overthinking soal jodoh aja hehe.</div>
+      </div>
+
+      <div class="main">
+        <p><strong>Deadline udah di depan mata, tapi tugas numpuk?</strong> Bingung mau mulai dari mana? Atau udah mentok sama jurnal dan artikel?</p>
+
+        <p>Nggak perlu pusing lagi! <strong>TugasinAja.Ok</strong> siap jadi partner andalan kamu buat semua tugas akademis. Layanan kami dijamin anti-pusing, kualitas oke, dan pastinya tepat waktu!</p>
+
+        <div class="list" aria-hidden="false">
+          <div class="item"><span class="check">✅</span> Makalah &amp; Esai</div>
+          <div class="item"><span class="check">✅</span> Presentasi PPT</div>
+          <div class="item"><span class="check">✅</span> Jurnal &amp; Artikel Ilmiah</div>
+          <div class="item"><span class="check">✅</span> Skripsi S1</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <p>Waktunya kamu bebas dari beban tugas dan fokus ke hal lain yang lebih penting!</p>
+        <a class="btn" href="https://wa.me/6285645870815" target="_blank" rel="noopener noreferrer">📲 Chat via WhatsApp</a>
+        <div class="phone">Hubungi: +62 856 4587 0815</div>
+      </div>
+
+      <div class="foot">Design untuk Instagram • Buat oleh TugasinAja.Ok • Pastikan ukuran ekspor 1080×1080px untuk kualitas terbaik</div>
+
+      <div class="pulse" aria-hidden="true">
+        <div class="ring"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional: small script to let user quickly download as PNG using html2canvas (CDN) -->
+  <script>
+    // If you want a Download button in the future, you can enable html2canvas from CDN and add a button that calls html2canvas(document.querySelector('.frame')).then(...)
+    // For security and performance, kept disabled by default.
+  </script>
+</body>
+</html>
